@@ -14,7 +14,8 @@ try {
   stage('hello') {
     node {
        
-          sh '''if [[ ${environment} == "dev" ]]; then
+          sh '''#! /bin/bash
+          if [[ ${environment} == "dev" ]]; then
            echo "hello dev"
         else
            echo "hello prod"
