@@ -1,4 +1,6 @@
-String credentialsId = 'ashish-aws-id'
+
+
+parameters { string(name: 'environment', defaultValue: 'prod', description: '') }
 
 try {
   stage('checkout') {
@@ -12,8 +14,12 @@ try {
   stage('hello') {
     node {
        
-         
-         echo "hello world" 
+         if [[ ${environment} == "dev" ]]; then
+           echo "hello dev"
+        else
+           echo "hello prod"
+        fi
+        
         
       
     }
