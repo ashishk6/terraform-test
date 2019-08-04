@@ -14,11 +14,11 @@ try {
   stage('hello') {
     node {
        
-         if [[ ${environment} == "dev" ]]; then
+          sh 'if [[ ${environment} == "dev" ]]; then
            echo "hello dev"
         else
            echo "hello prod"
-        fi
+        fi'
         
         
       
